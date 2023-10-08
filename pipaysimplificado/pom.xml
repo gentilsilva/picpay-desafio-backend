@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.pipaysimplificado</groupId>
-    <artifactId>pipaysimplificado</artifactId>
+    <artifactId>picpaysimplificado</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>pipaysimplificado</name>
-    <description>pipaysimplificado</description>
+    <name>picpaysimplificado</name>
+    <description>picpaysimplificado</description>
     <properties>
         <java.version>17</java.version>
     </properties>
