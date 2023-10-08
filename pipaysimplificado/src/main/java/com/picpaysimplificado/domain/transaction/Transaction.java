@@ -1,18 +1,17 @@
-package com.pipaysimplificado.domain.transaction;
+package com.picpaysimplificado.domain.transaction;
 
-import com.pipaysimplificado.domain.user.User;
+import com.picpaysimplificado.domain.user.User;
+import com.picpaysimplificado.dtos.TransactionForm;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity(name = "transactions")
 @Table(name = "transactions")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Transaction {
@@ -28,5 +27,12 @@ public class Transaction {
     @JoinColumn(name = "receiver_id")
     private User receiver;
     private LocalDateTime timeStamp;
+
+    public Transaction(TransactionForm transactionForm, User sender, User receiver) {
+        this.amount = transactionForm.value();
+        this.sender = sender;
+        this.receiver = receiver;
+        this.timeStamp = LocalDateTime.now();
+    }
 
 }
