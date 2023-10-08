@@ -1,5 +1,6 @@
-package com.pipaysimplificado.domain.user;
+package com.picpaysimplificado.domain.user;
 
+import com.picpaysimplificado.dtos.UserForm;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -28,4 +29,13 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserType userType;
 
+    public User(UserForm userForm) {
+        this.firstname = userForm.firstname();
+        this.lastname = userForm.lastname();
+        this.document = userForm.document();
+        this.email = userForm.email();
+        this.password = userForm.password();
+        this.balance = userForm.balance();
+        this.userType = userForm.userType();
+    }
 }
